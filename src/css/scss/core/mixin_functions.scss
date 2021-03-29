@@ -1,0 +1,222 @@
+@function rem($size,$res:true) {
+    $result: null;
+    $remSize: $size;
+    @if $res == true {
+        $remSize: (1px * $size) / 16px;
+        $result:#{$remSize}rem;
+    }
+    @else {
+        $result:#{$remSize}px;
+    }
+
+
+    @return $result;
+}
+
+@mixin hideScroll {
+    &::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+@mixin bg-image($inlineimage:true, $background-position:center, $background-size:contain) {
+
+    @if $inlineimage != true {
+        background-image: url('#{$imagefolder}/#{$inlineimage}');
+    }
+
+
+    background-repeat: no-repeat;
+    background-position: $background-position;
+    background-size:$background-size;
+}
+
+@mixin shadow($x:0, $y:0, $blur:0, $spread:0, $color:black) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+
+@mixin absolute {
+    position: absolute;
+    @content;
+}
+@mixin fixed {
+    position: fixed;
+    @content;
+}
+@mixin relative {
+    position: relative;
+    @content;
+}
+
+@mixin flex($direction:row,$wrap:true) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    @if $wrap {
+        flex-wrap: wrap;
+    } @else {
+        flex-wrap: nowrap;
+    }
+    @if $direction==col {
+        flex-direction: column;
+    }
+}
+
+@mixin align-center() {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@mixin align-end() {
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+
+
+@mixin justify-center() {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@mixin justify-between() {
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+}
+
+@mixin flex-center($direction:row,$wrap:true) {
+    @include flex($direction,$wrap);
+    @include align-center();
+    @include justify-center();
+}
+
+@mixin flex-y-center($direction:row,$wrap:true) {
+    @include flex($direction,$wrap);
+    @include align-center();
+}
+
+@mixin flex-y-end($direction:row,$wrap:true) {
+    @include flex($direction,$wrap);
+    @include align-end();
+}
+
+@mixin flex-x-center($direction:row,$wrap:true) {
+    @include flex($direction,$wrap);
+    @include justify-center();
+}
+
+@mixin flex-between($direction:row,$wrap:true) {
+    @include flex($direction,$wrap);
+    @include justify-between();
+}
+
+@mixin link-hover(){
+    &:hover,&:active,&:focus{
+        color:getColor(yellow);
+
+        .fas{
+            color:getColor(yellow);
+        }
+
+        svg{
+            path{
+                fill:getColor(yellow);
+            }
+        }
+    }
+}
+
+
+
+
+@mixin scrollBar($bg-color,$color) {
+    scrollbar-width: thin;
+    scrollbar-color: $bg-color $color;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+
+    &::-webkit-scrollbar-track {
+        background: $bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 6px;
+        border: 3px solid $bg-color;
+    }
+}
+
+
+@mixin resetButton {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    outline:none;
+    
+    &:hover, &:active, &:focus{
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+        outline:none;
+    }
+}
+
+@mixin m-auto($direction){
+    @if $direction==x {
+        margin-left: auto;
+        margin-right: auto;
+    } @else if $direction==y{
+        margin-top: auto;
+        margin-bottom: auto;
+    } @else {
+        margin: auto;
+    }
+}
+
+@mixin text-gradient(){
+    background: $main-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
