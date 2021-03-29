@@ -149,7 +149,6 @@ gulp.task('copy-document', function (done) {
 });
 
 gulp.task('copy-videos', function (done) {
-  console.log(paths.videoSrc)
   return gulp.src(paths.videoSrc)
     .pipe(gulp.dest(paths.distVideo));
   done();
