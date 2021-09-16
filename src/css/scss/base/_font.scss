@@ -1,0 +1,79 @@
+$font-family-default:-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+
+
+//local font family
+$main-font-family:'Nunito';
+
+
+@mixin font-face($name, $file, $weight:normal) {
+ 
+   @font-face {
+      font-family: $main-font-family;
+      src:local('#{$name}'),url("../fonts/#{$file}.woff2") format("woff2"),url("../fonts/#{$file}.woff") format("woff");
+      font-weight: $weight;
+      font-style:normal;
+      font-display: swap;
+   }
+}
+
+$font-weights:(
+   thin:100,
+   light:300,
+   regular:400,
+   medium:500,
+   semibold:600,
+   bold:700,
+   xbold:800,
+   black:900,
+);
+
+@function getFontWeight($weight) {
+   @return map-get($font-weights, $weight);
+}
+
+@mixin getFontFamily($family) {
+   font-weight: getFontWeight($family);
+}
+
+
+$uiFonts: (
+   xlight:"#{$main-font-family}-XLight",
+   light:"#{$main-font-family}-Light",
+   regular:"#{$main-font-family}-Regular",
+   medium:"#{$main-font-family}-SemiBold",
+   semibold:"#{$main-font-family}-Medium",
+   bold:"#{$main-font-family}-Bold",
+   black:"#{$main-font-family}-Black",
+);
+
+@each $map-key,
+$map-value in $uiFonts {
+   @include font-face($map-value, $map-value, getFontWeight($map-key));
+}
+
+
+@mixin setFont($size, $weight, $color,$line-height:"",$rfs:true) {
+
+    @if $rfs {
+      @include rfs($size);
+   } @else{
+      font-size: rem($size);
+   }
+
+   font-weight:getFontWeight($weight);
+   color:getColor($color);
+   @if $line-height != ""{
+      line-height: rem($line-height);
+   }
+}

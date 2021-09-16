@@ -1,0 +1,14 @@
+@function rem($size,$res:true) {
+    $result: null;
+    $remSize: $size;
+    @if $res == true {
+        $remSize: (1px * $size) / 16px;
+        $result:#{$remSize}rem;
+    }
+    @else {
+        $result:#{$remSize}px;
+    }
+
+
+    @return $result;
+}

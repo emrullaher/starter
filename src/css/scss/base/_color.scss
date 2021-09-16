@@ -1,0 +1,30 @@
+//bootstrap colors override
+
+// $primary: #5D54C1;
+// $secondary:#FFEBA3;
+// $success:#68DB68;
+
+// $info:#008FD1;
+// $warning:#FEC014;
+
+
+//ui-colors
+$ui-colors:(
+    primary:#ff0000,
+    red:#ff0000,
+    blue:#0000ff,
+);
+
+
+@function getColor($colorName) {
+
+    @each $map-key,
+    $map-value in $ui-colors {
+        @if $map-key==$colorName {
+            @return $map-value
+        }
+    }
+
+    ;
+    @return $colorName;
+}

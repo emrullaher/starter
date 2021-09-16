@@ -1,0 +1,212 @@
+$imagefolder: "../../dist/media/img"; //image folder
+
+
+$main-border:1px solid getColor(border-gray);
+$main-radius:0;
+
+$active-check:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTcgMTAuNUwyIDcuNUwwIDkuNUw3IDE3LjVMMjAgNC41TDE4IDIuNUw3IDEwLjVaIiBmaWxsPSJ3aGl0ZSIvPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdmc+");
+
+
+$menu-height:120px;
+
+
+//bootstrap overrides
+
+$font-family-sans-serif: $main-font-family,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+$btn-font-family:$font-family-sans-serif;
+$input-btn-font-family:$font-family-sans-serif;
+
+
+/* grid */
+
+$grid-breakpoints: (
+    xs: 0,
+    xsm:350px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xlg:1560px,
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xlg: 1500px,
+);
+
+/* typography */
+$enable-responsive-font-sizes:true;
+$font-size-base: 1rem;
+
+
+// $headings-color:getColor(heading-color);
+// $headings-font-family:$main-font-family;
+// $headings-font-weight:600;
+
+
+$h1-font-size:36px;
+$h2-font-size:32px;
+$h3-font-size:26px;
+$h4-font-size:22px;
+$h5-font-size:18px;
+$h6-font-size:16px;
+
+
+$font-weight-base:400;
+$line-height-base:1.5;
+$headings-font-weight:400;
+$headings-line-height:1.5;
+$link-hover-decoration:none;
+$headings-font-family:"#{$main-font-family}";
+
+
+// /*navbar */
+
+
+// /* buttons */
+
+// $input-btn-padding-y:0.875rem;
+// $input-btn-padding-x:1.25rem;
+// $input-btn-font-family:$main-font-family;
+// $input-btn-font-size:1rem;
+// $input-btn-line-height:1;
+
+// $input-btn-focus-width:0;
+// $input-btn-focus-color:none;
+// $input-btn-focus-box-shadow:none;
+
+// $input-btn-padding-y-sm:0.625rem;
+// $input-btn-padding-x-sm:0.625rem;
+// $input-btn-font-size-sm:0.875rem;
+// $input-btn-line-height-sm:1;
+
+// $input-btn-padding-y-lg:1rem;
+// $input-btn-padding-x-lg:1.625rem;
+// $input-btn-font-size-lg:1.125rem;
+// $input-btn-line-height-lg:1;
+
+// $input-btn-border-width:0.0625rem;
+
+
+
+
+// // $btn-block-spacing-y:         .5rem !default;
+
+// $border-color:getColor(border-color);
+
+$border-radius:$main-radius;
+$border-radius-lg:$main-radius;
+$border-radius-sm:$main-radius;
+
+
+// /*form-group*/
+// $form-group-margin-bottom:12px;
+
+
+/* inputs */
+
+$form-group-margin-bottom:1.875rem;
+
+$input-btn-focus-box-shadow:none;
+
+$input-border-color:getColor(border-gray);
+
+$input-height:60px;
+$input-padding-y:1.1875rem;
+$input-padding-x:0.9375rem;
+
+$input-font-size:16px;
+$input-border-radius:$main-radius;
+$input-bg:getColor(background-gray);
+$input-color:getColor(black);
+$input-font-weight:500;
+$input-placeholder-color:getColor(gray);
+$input-plaintext-color:getColor(gray);
+
+$input-focus-bg:getColor(white);
+$input-focus-border-color:getColor(main-gradient);
+
+
+// // $input-height-lg:4.125rem;
+// // $input-padding-y-lg:1.375rem;
+// // $input-padding-x-lg:1.375rem;
+// // $input-font-size-lg:1.125rem;
+// // $input-border-radius-lg:0.3125rem;
+
+
+
+// /* cards */
+$card-bg:getColor(white);
+$card-border-width:1px;
+$card-border-radius:$main-radius;
+$card-border-color:getColor(border-gray);
+
+
+
+// /* tabs */
+// $nav-tabs-border-color:transparent;
+// $nav-tabs-border-width:0px;
+// $nav-tabs-border-radius:0px;
+// $nav-tabs-link-hover-border-color:transparent;
+// $nav-tabs-link-active-color:$primary;
+// $nav-tabs-link-active-bg:transparent;
+// $nav-tabs-link-active-border-color:transparent;
+
+
+// /* paginate */
+
+// $pagination-active-bg:getColor(primary);
+// $pagination-active-border-color:getColor(primary);
+// $pagination-active-color:white;
+// $pagination-padding-y:6px; 
+// $pagination-padding-x:16px;
+
+
+
+/* breadcrumb */
+
+$breadcrumb-font-size:10px;
+
+$breadcrumb-padding-y:0;
+$breadcrumb-padding-x:0;
+$breadcrumb-item-padding:15px;
+
+$breadcrumb-margin-bottom:0;
+
+$breadcrumb-bg:transparent;
+$breadcrumb-divider-color:rgba(white,0.3);
+$breadcrumb-active-color:#fff;
+$breadcrumb-border-radius:0;
+
+$breadcrumb-divider:quote("");
+
+$spacer: 0.625rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 1.5),
+    3: ($spacer * 3),
+    4: ($spacer * 4.5),
+    5: ($spacer * 6),
+    6: ($spacer * 9),
+    7: ($spacer * 15),
+  ),
+  $spacers
+);
